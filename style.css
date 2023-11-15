@@ -1,0 +1,213 @@
+ /* goolge font linkup  */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+:root{
+    --main-bg: #f3f5fa;
+    --sec-bg: #ffffff;
+    --text-color: #47b2e4;
+    --title-color: #37517e;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Basic css for all section */
+section{
+    min-height: 100vh;
+    padding: 5rem 8%;
+}
+
+/*----- header section css start -----*/
+/* navbar css */
+nav{
+    padding: 20px 8%;
+    background: linear-gradient(rgba(61, 77, 106, .9) , rgba(61, 77, 106, .9));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+nav .menu_bar{
+    display: flex;
+    align-items: center;
+}
+nav .logo{
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+nav .menu_bar ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 1.5rem;
+}
+nav .menu_bar ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+    transition: .5s ease;
+}
+nav .menu_bar ul li a:hover{
+    color: #fff;
+}
+
+nav .menu_bar ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--text-color);
+    display: block;
+    transition: .5s ease;
+}
+nav .menu_bar ul li a:hover::after{
+    width: 100%;
+}
+
+nav .menu_bar .btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 18px;
+    border: 2px solid var(--text-color);
+    border-radius: 20px;
+    transition: .5s ease;
+}
+nav .menu_bar .btn:hover{
+    background: var(--text-color);
+}
+
+nav .mobile_icon i{
+    font-size: 24px;
+    color: #fff;
+}
+nav .mobile_icon{
+    display: none;
+}
+
+/* hero area css */
+header .hero_area{
+    padding: 2.5rem 8%;
+    display: flex;
+    background: var(--title-color);
+    align-items: center;
+    flex-wrap: wrap;
+}
+header .hero_area .hero_text{
+    flex-basis: 50%;
+}
+header .hero_area .hero_text h1{
+    font-size: 50px;
+    color: #fff;
+}
+header .hero_area .hero_text p{
+    font-size: 24px;
+    color: #a4b9cb;
+    margin-top: 20px;
+}
+header .hero_area .hero_btn{
+    margin-top: 50px;
+}
+header .hero_area .hero_btn a:nth-of-type(1){
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: var(--text-color);
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+}
+
+header .hero_area .hero_btn a:nth-of-type(2){
+    text-decoration: none;
+    color: #fff;
+}
+header .hero_area .hero_btn a:nth-of-type(2)::before{
+    font-family: "Font Awesome 5 Free";
+    content: '\f144';
+    display: inline-block;
+    font-size: 35px;
+    vertical-align: middle;
+    margin: 0 10px 0 30px;
+    transition: .5s ease;
+}
+header .hero_area .hero_btn a:nth-of-type(2):hover::before{
+    color: #47b2e4;
+}
+
+header .hero_area .hero-img{
+    flex-basis: 50%;
+}
+header .hero_area .hero-img img{
+    width: 100%;
+}
+
+
+/* header responsive css */
+@media only screen and (max-width: 1024px){
+    header .hero_area .hero_text{
+        flex-basis: 100%;
+    }
+    header .hero_area .hero_text h1{
+        font-size: 40px;
+    }
+    header .hero_area .hero-img{
+        flex-basis: 100%;
+         margin-top: 50px;
+    }
+    header .hero_area .hero-img img{
+        max-width: 620px;
+        display: block;
+        margin: auto;
+    }
+
+    nav .menu_bar{
+        display: none;
+    }
+    nav .mobile_icon{
+        display: block;
+    }
+}
+/*----- header section css end -----*/
+
+
+/*----- client section start -----*/
+.client{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
+    gap: 20px 50px;
+    padding: 20px 8%;
+    background: var(--main-bg);
+}
+.client img{
+    width: 100%;
+    filter: grayscale(100);
+    transition: .5s ease;
+}
+.client img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* client section responsive css */
+@media only screen and (max-width: 1010px){
+    .client{
+        grid-template-columns: repeat(3, minmax(100px , 1fr));
+        padding: 20px 16%;
+        gap: 20px 100px;
+    }
+}
+@media only screen and (max-width: 740px){
+    .client{
+        grid-template-columns: repeat(2, minmax(100px , 1fr));
+        padding: 20px 25%;
+    }
+}
+@media only screen and (max-width: 574px){
+    .client{
+        grid-template-columns: repeat(auto-fit, minmax(100px , 1fr));
+        padding: 20px 8%;
+    }
+}
+/*----- client section end -----*/
